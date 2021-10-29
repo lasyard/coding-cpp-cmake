@@ -1,0 +1,7 @@
+add_test(btree btree.cpp)
+add_test(factorial factorial.cpp)
+add_test(greatest_sum_of_sub_array greatest_sum_of_sub_array.cpp)
+add_test(longest_common_subsequence longest_common_subsequence.cpp)
+add_test(longest_symmetrical_length longest_symmetrical_length.cpp)
+add_test(reverse_words_in_sentence reverse_words_in_sentence.cpp)
+add_test(sort_list_and_remove_dup sort_list_and_remove_dup.cpp)

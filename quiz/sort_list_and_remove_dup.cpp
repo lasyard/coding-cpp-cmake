@@ -96,7 +96,7 @@ void removeDupInSortedList(struct ListNode *head)
     }
 }
 
-bool list_equals(struct ListNode *head, int a[])
+bool listEquals(struct ListNode *head, int a[])
 {
     int i;
     struct ListNode *p;
@@ -116,18 +116,18 @@ TEST_CASE("Test removeDupInSortedList()")
     std::cout << "Before Sorting:" << std::endl;
     std::cout << list;
     // GNU g++ does not support this, but clang++ does.
-    // CHECK(list_equals(list, (int[]){4, 2, 3, 0, 1, 3, 2, 1, 2, 3, 3, 4, 5}));
+    // CHECK(listEquals(list, (int[]){4, 2, 3, 0, 1, 3, 2, 1, 2, 3, 3, 4, 5}));
     int b[]{4, 2, 3, 0, 1, 3, 2, 1, 2, 3, 3, 4, 5};
-    CHECK(list_equals(list, b));
+    CHECK(listEquals(list, b));
     list = sortList(list);
     std::cout << "After Sorting, Before Dedup:" << std::endl;
     std::cout << list;
     int c[]{0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 5};
-    CHECK(list_equals(list, c));
+    CHECK(listEquals(list, c));
     removeDupInSortedList(list);
     std::cout << "After Dedup:" << std::endl;
     std::cout << list;
     int d[]{0, 1, 2, 3, 4, 5};
-    CHECK(list_equals(list, d));
+    CHECK(listEquals(list, d));
     destroyList(list);
 }

@@ -1,6 +1,7 @@
 add_test(btree btree.cpp)
 add_test(coded_lock coded_lock.cpp)
 add_test(factorial factorial.cpp)
+add_test(games_solution games_solution.cpp)
 add_test(greatest_sum_of_sub_array greatest_sum_of_sub_array.cpp)
 add_test(longest_common_subsequence longest_common_subsequence.cpp)
 add_test(longest_symmetrical_length longest_symmetrical_length.cpp)

@@ -40,4 +40,5 @@ int main(void)
 {
     int pos[QUEENS];
     putQueenInLine(pos, 0);
+    return 0;
 }

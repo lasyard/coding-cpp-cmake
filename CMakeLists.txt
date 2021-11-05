@@ -12,9 +12,16 @@ function(add_test target)
     set(test_executable_name ${target}_test)
     add_executable(${test_executable_name} ${ARGN})
     target_compile_features(${test_executable_name} PRIVATE cxx_std_17 c_std_17)
+    target_compile_options(${test_executable_name} PRIVATE -Werror -Wall -Wextra)
     target_link_libraries(${test_executable_name} doctest)
     # Here `ADD_LABELS` must be provided.
     doctest_discover_tests(${test_executable_name} ADD_LABELS 1)
+endfunction()
+
+function(add_exe target)
+    add_executable(${target} ${ARGN})
+    target_compile_features(${target} PRIVATE cxx_std_17 c_std_17)
+    target_compile_options(${target} PRIVATE -Werror -Wall -Wextra)
 endfunction()
 
 add_subdirectory(quiz)

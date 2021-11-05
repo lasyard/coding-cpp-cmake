@@ -1,9 +1,10 @@
 {
     "files.associations": {
-        "__config": "cpp",
-        "algorithm": "cpp",
-        "chrono": "cpp",
-        "locale": "cpp",
-        "memory": "cpp"
+      "__config": "cpp",
+      "algorithm": "cpp",
+      "chrono": "cpp",
+      "locale": "cpp",
+      "memory": "cpp",
+      "ostream": "c"
     }
 }

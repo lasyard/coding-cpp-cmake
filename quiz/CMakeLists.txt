@@ -10,4 +10,5 @@ add_test(magic_square magic_square.cpp)
 add_test(reverse_words_in_sentence reverse_words_in_sentence.cpp)
 add_test(sort_list_and_remove_dup sort_list_and_remove_dup.cpp)
 
-add_executable(eight_queen eight_queen.c)
+add_exe(eight_queen eight_queen.c)
+add_exe(sudoku sudoku.c)

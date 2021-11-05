@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include <stdio.h>
 
 /* clang-format off */
@@ -24,40 +25,40 @@ static void print(int m[][9])
     }
 }
 
-static int row_include(int m[][9], int i, int x)
+static bool rowInclude(int m[][9], int i, int x)
 {
     for (int j = 0; j < 9; j++) {
         if (m[i][j] == x) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-static int col_include(int m[][9], int j, int x)
+static bool colInclude(int m[][9], int j, int x)
 {
     for (int i = 0; i < 9; i++) {
         if (m[i][j] == x) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-static int sqr_include(int m[][9], int i, int j, int x)
+static bool sqrInclude(int m[][9], int i, int j, int x)
 {
     int ii, jj;
     for (ii = i / 3 * 3; ii <= i / 3 * 3 + 2; ii++) {
         for (jj = j / 3 * 3; jj <= j / 3 * 3 + 2; jj++) {
             if (m[ii][jj] == x) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-static void next_pos(int pos[2], int m[][9], int i, int j)
+static void nextPos(int pos[2], int m[][9], int i, int j)
 {
     do {
         j++;
@@ -77,13 +78,13 @@ static void next_pos(int pos[2], int m[][9], int i, int j)
 static void solve(int m[][9], int i, int j)
 {
     int n[2];
-    next_pos(n, m, i, j);
+    nextPos(n, m, i, j);
     if (n[0] == -1) {
         print(m);
         return;
     }
     for (int num = 1; num <= 9; num++) {
-        if (row_include(m, n[0], num) || col_include(m, n[1], num) || sqr_include(m, n[0], n[1], num)) {
+        if (rowInclude(m, n[0], num) || colInclude(m, n[1], num) || sqrInclude(m, n[0], n[1], num)) {
             continue;
         }
         m[n[0]][n[1]] = num;

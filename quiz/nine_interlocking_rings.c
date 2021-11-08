@@ -1,3 +1,7 @@
+/**
+ * See https://lasy.readthedocs.io/quiz/math/nine_interlocking_rings.html
+ */
+
 #include <stdio.h>
 
 #define RINGS 9

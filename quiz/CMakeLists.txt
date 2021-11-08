@@ -10,6 +10,7 @@ add_test(magic_square magic_square.cpp)
 add_test(reverse_words_in_sentence reverse_words_in_sentence.cpp)
 add_test(sort_list_and_remove_dup sort_list_and_remove_dup.cpp)
 
+add_exe(diamond_chess diamond_chess.c)
 add_exe(eight_queen eight_queen.c)
 add_exe(horse_move horse_move.c)
 add_exe(nine_interlocking_rings nine_interlocking_rings.c)

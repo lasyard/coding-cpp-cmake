@@ -5,6 +5,11 @@
       "chrono": "cpp",
       "locale": "cpp",
       "memory": "cpp",
-      "ostream": "c"
+      "ostream": "c",
+      "__debug": "c",
+      "functional": "c",
+      "unordered_map": "c",
+      "complex": "c",
+      "new": "c"
     }
 }

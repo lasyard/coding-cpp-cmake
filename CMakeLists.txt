@@ -25,6 +25,7 @@ function(add_exe target)
 endfunction()
 
 add_subdirectory(quiz)
+add_subdirectory(terminal_game)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

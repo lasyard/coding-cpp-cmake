@@ -8,12 +8,5 @@ add_exe(pick pick.c)
 target_link_libraries(pick term_linux)
 add_exe(sokoban sokoban.c)
 target_link_libraries(sokoban term_linux)
-set(SRC_XSB_FILE ${CMAKE_CURRENT_SOURCE_DIR}/default.xsb)
-set(TARGET_XSB_FILE ${CMAKE_CURRENT_BINARY_DIR}/default.xsb)
-add_custom_target(copy_xsb DEPENDS ${TARGET_XSB_FILE})
-add_custom_command(
-    OUTPUT ${TARGET_XSB_FILE}
-    COMMAND ${CMAKE_COMMAND} -E copy ${SRC_XSB_FILE} ${TARGET_XSB_FILE}
-    DEPENDS ${SRC_XSB_FILE}
-)
+copy_file(copy_xsb default.xsb)
 add_dependencies(sokoban copy_xsb)

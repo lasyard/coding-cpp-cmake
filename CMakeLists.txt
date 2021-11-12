@@ -8,11 +8,15 @@ add_subdirectory(doctest)
 
 include(doctest/scripts/cmake/doctest.cmake)
 
+function(target_common_settings target)
+    target_compile_features(${target} PRIVATE cxx_std_17 c_std_17)
+    target_compile_options(${target} PRIVATE -Werror -Wall -Wextra)
+endfunction()
+
 function(add_test target)
     set(test_executable_name ${target}_test)
     add_executable(${test_executable_name} ${ARGN})
-    target_compile_features(${test_executable_name} PRIVATE cxx_std_17 c_std_17)
-    target_compile_options(${test_executable_name} PRIVATE -Werror -Wall -Wextra)
+    target_common_settings(${test_executable_name})
     target_link_libraries(${test_executable_name} doctest)
     # Here `ADD_LABELS` must be provided.
     doctest_discover_tests(${test_executable_name} ADD_LABELS 1)
@@ -20,8 +24,13 @@ endfunction()
 
 function(add_exe target)
     add_executable(${target} ${ARGN})
-    target_compile_features(${target} PRIVATE cxx_std_17 c_std_17)
-    target_compile_options(${target} PRIVATE -Werror -Wall -Wextra)
+    target_common_settings(${target})
+endfunction()
+
+function(add_lib target)
+    add_library(${target})
+    target_sources(${target} PRIVATE ${ARGN})
+    target_common_settings(${target})
 endfunction()
 
 function(copy_file target file)
@@ -36,6 +45,7 @@ function(copy_file target file)
 endfunction()
 
 add_subdirectory(app)
+add_subdirectory(common)
 add_subdirectory(quiz)
 add_subdirectory(terminal_game)
 

@@ -1,7 +1,4 @@
-add_library(term_linux)
-target_sources(term_linux PRIVATE term_linux.c term_linux.h)
-target_compile_features(term_linux PRIVATE cxx_std_17 c_std_17)
-target_compile_options(term_linux PRIVATE -Werror -Wall -Wextra)
+add_library(term_linux term_linux.c term_linux.h)
 add_exe(mine mine.c)
 target_link_libraries(mine term_linux)
 add_exe(pick pick.c)

@@ -10,6 +10,15 @@
       "functional": "c",
       "unordered_map": "c",
       "complex": "c",
-      "new": "c"
-    }
+      "new": "c",
+      "__tree": "c",
+      "atomic": "c",
+      "type_traits": "c",
+      "optional": "c"
+    },
+    "C/C++ Include Guard.Insert Blank Line": true,
+    "C/C++ Include Guard.Macro Type": "Filepath",
+    "C/C++ Include Guard.Path Depth": 1,
+    "C/C++ Include Guard.Prefix": "_",
+    "C/C++ Include Guard.Suffix": "_H_"
 }

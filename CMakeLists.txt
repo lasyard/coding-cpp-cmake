@@ -46,6 +46,7 @@ endfunction()
 
 add_subdirectory(app)
 add_subdirectory(common)
+add_subdirectory(count24)
 add_subdirectory(quiz)
 add_subdirectory(terminal_game)
 

@@ -189,7 +189,7 @@ int main(void)
 {
     printf("Please input four numbers: ");
     int num[NUM];
-    scanf("%d %d %d %d", num, num + 1, num + 2, num + 3);
+    assert(scanf("%d %d %d %d", num, num + 1, num + 2, num + 3) == 4);
     struct number numbers[NUM];
     for (int i = 0; i < NUM; ++i) {
         init_number(&numbers[i], int_to_fraction(num[i]));

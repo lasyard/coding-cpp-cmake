@@ -49,7 +49,11 @@ add_subdirectory(common)
 add_subdirectory(count24)
 add_subdirectory(quiz)
 add_subdirectory(terminal_game)
-add_subdirectory(wx)
+
+find_package(wxWidgets QUIET)
+if (wxWidgets_FOUND)
+    add_subdirectory(wx)
+endif()
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

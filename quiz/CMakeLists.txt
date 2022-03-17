@@ -7,6 +7,7 @@ add_test(hanoi hanoi.cpp)
 add_test(longest_common_subsequence longest_common_subsequence.cpp)
 add_test(longest_symmetrical_length longest_symmetrical_length.cpp)
 add_test(magic_square magic_square.cpp)
+add_test(null_obj null_obj.cpp)
 add_test(reverse_words_in_sentence reverse_words_in_sentence.cpp)
 add_test(sort_list_and_remove_dup sort_list_and_remove_dup.cpp)
 

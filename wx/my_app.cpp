@@ -1,12 +1,11 @@
-#include <wx/frame.h>
-
 #include "my_app.h"
+#include "my_frame.h"
 
 IMPLEMENT_APP(MyApp)
 
 bool MyApp::OnInit()
 {
-    wxFrame *frame = new wxFrame(nullptr, wxID_ANY, "Hello, wxWidgets");
+    auto frame = new MyFrame("Hello, wxWidgets");
     SetTopWindow(frame);
     frame->Show(true);
     return true;

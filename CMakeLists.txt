@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
+set(CMAKE_OSX_SYSROOT /Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk)
 project(code-cpp VERSION 1.0.0 LANGUAGES C CXX)
 
 include(CTest)

@@ -9,6 +9,7 @@ on:
       - "**/*.c"
       - "**/*.cpp"
       - "**/CMakeList.txt"
+      - ".github/workflows/cmake.yml"
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
@@ -28,7 +29,7 @@ jobs:
           submodules: recursive
 
       - name: Install wxWidgets
-        run: apt satisfy libwxgtk3.0-dev
+        run: sudo apt satisfy libwxgtk3.0-gtk3-dev
 
       - name: Configure CMake
         working-directory: ${{github.workspace}}

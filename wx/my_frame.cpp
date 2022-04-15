@@ -4,6 +4,15 @@
 
 #include "my_frame.h"
 
+IMPLEMENT_DYNAMIC_CLASS(MyFrame, wxFrame)
+
+BEGIN_EVENT_TABLE(MyFrame, wxFrame)
+EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
+EVT_MENU(wxID_EXIT, MyFrame::OnQuit)
+EVT_SIZE(MyFrame::OnSize)
+EVT_BUTTON(wxID_OK, MyFrame::OnButtonOK)
+END_EVENT_TABLE()
+
 MyFrame::MyFrame(const wxString &title) : wxFrame(NULL, wxID_ANY, title)
 {
     auto fileMenu = new wxMenu();
@@ -18,13 +27,6 @@ MyFrame::MyFrame(const wxString &title) : wxFrame(NULL, wxID_ANY, title)
     SetStatusText(_("Welcome to ") + wxVERSION_STRING + _("."));
     [[maybe_unused]] auto button = new wxButton(this, wxID_OK, _("OK"), wxPoint(100, 100));
 }
-
-BEGIN_EVENT_TABLE(MyFrame, wxFrame)
-EVT_MENU(wxID_ABOUT, MyFrame::OnAbout)
-EVT_MENU(wxID_EXIT, MyFrame::OnQuit)
-EVT_SIZE(MyFrame::OnSize)
-EVT_BUTTON(wxID_OK, MyFrame::OnButtonOK)
-END_EVENT_TABLE()
 
 void MyFrame::OnAbout([[maybe_unused]] wxCommandEvent &event)
 {

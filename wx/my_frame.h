@@ -15,10 +15,17 @@ public:
 
     MyFrame(const wxString &title);
 
-    void OnQuit(wxCommandEvent &event);
-    void OnAbout(wxCommandEvent &event);
-    void OnSize(wxSizeEvent &event);
-    void OnButtonOK(wxCommandEvent &event);
+    virtual void OnExit(wxCommandEvent &event);
+    virtual void OnClose(wxCloseEvent &event);
+    virtual void OnAbout(wxCommandEvent &event);
+    virtual void OnSize(wxSizeEvent &event);
+    virtual void OnButtonOK(wxCommandEvent &event);
+
+private:
+    const wxChar *TM() const
+    {
+        return GetClassInfo()->GetClassName();
+    };
 };
 
 #endif /* _WX_MY_FRAME_H_ */

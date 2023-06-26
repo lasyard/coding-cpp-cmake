@@ -34,7 +34,11 @@ MyFrame::MyFrame(const wxString &title) : wxFrame(nullptr, wxID_ANY, title)
 void MyFrame::OnAbout([[maybe_unused]] wxCommandEvent &event)
 {
     wxMessageBox(
-        _("Hello and welcome to ") + wxVERSION_STRING + _("."), _("About MyApp"), wxOK | wxICON_INFORMATION, this);
+        _("Hello and welcome to ") + wxVERSION_STRING + _("."),
+        _("About MyApp"),
+        wxOK | wxICON_INFORMATION,
+        this
+    );
 }
 
 void MyFrame::OnExit([[maybe_unused]] wxCommandEvent &event)

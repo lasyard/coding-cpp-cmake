@@ -1,5 +1,5 @@
-#ifndef _WX_MY_APP_H_
-#define _WX_MY_APP_H_
+#ifndef _FRAME_MY_APP_H_
+#define _FRAME_MY_APP_H_
 
 #include <wx/wx.h>
 
@@ -18,4 +18,4 @@ private:
 
 DECLARE_APP(MyApp)
 
-#endif /* _WX_MY_APP_H_ */
+#endif /* _FRAME_MY_APP_H_ */

@@ -1,4 +1,5 @@
 #include "my_app.h"
+
 #include "my_frame.h"
 
 IMPLEMENT_APP(MyApp)

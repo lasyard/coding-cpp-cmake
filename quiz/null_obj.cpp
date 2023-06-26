@@ -14,5 +14,8 @@ public:
 
 TEST_CASE("test_null_obj")
 {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wnonnull"
     CHECK((static_cast<NullObj *>(nullptr))->get() == nullptr);
+#pragma GCC diagnostic pop
 }

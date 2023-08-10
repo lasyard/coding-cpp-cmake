@@ -59,6 +59,7 @@ static void showCoveredCell(int x, int y)
 static void showOpenedCell(int x, int y, int num)
 {
     static enum Color color[9] = {BLUE, WHITE, CYAN, GREEN, YELLOW, RED, PURPLE, PURPLE, PURPLE};
+
     if (num == 0) {
         output(' ', BLUE, color[num], x, y);
     } else {

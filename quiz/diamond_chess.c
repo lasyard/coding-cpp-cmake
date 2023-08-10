@@ -9,7 +9,6 @@ struct move {
 static struct move moveStack[32];
 static int top = 0;
 
-/* clang-format off */
 static int map[7][7] = {
     {2, 2, 1, 1, 1, 2, 2},
     {2, 2, 1, 1, 1, 2, 2},
@@ -19,7 +18,6 @@ static int map[7][7] = {
     {2, 2, 1, 1, 1, 2, 2},
     {2, 2, 1, 1, 1, 2, 2},
 };
-/* clang-format on */
 
 static bool valid(int x, int y)
 {

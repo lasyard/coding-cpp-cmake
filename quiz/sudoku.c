@@ -1,7 +1,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-/* clang-format off */
 static int m[][9] = {
     {8, 0, 0, 0, 0, 0, 0, 0, 0},
     {0, 0, 3, 6, 0, 0, 0, 0, 0},
@@ -13,7 +12,6 @@ static int m[][9] = {
     {0, 0, 8, 5, 0, 0, 0, 1, 0},
     {0, 9, 0, 0, 0, 0, 4, 0, 0},
 };
-/* clang-format on */
 
 static void print(int m[][9])
 {

@@ -5,6 +5,8 @@
 #include <string.h>
 #include <unistd.h>
 
+#include <sys/wait.h>
+
 #include "log_err.h"
 
 bool run_cmd(int argc, char *argv[])

@@ -1,16 +1,18 @@
 #include <stdlib.h>
-#include <syslog.h>
 #include <unistd.h>
 
 #include "daemon.h"
+#include "log_err.h"
 
 int main()
 {
-    daemonize();
-    openlog("daemon_test", LOG_CONS, LOG_DAEMON);
-    if (is_running("/var/run/daemon_test.pid")) {
-        syslog(LOG_DAEMON | LOG_ERR, "daemon_test is already running");
-        exit(EXIT_FAILURE);
+    pid_t pid = daemonize("/var/log/daemon_test.log");
+    if (pid == 0) {
+        if (is_running("/var/run/daemon_test.pid")) {
+            log_err("daemon_test is already running");
+            return EXIT_FAILURE;
+        }
+        sleep(10);
     }
-    sleep(10);
+    return pid > 0 ? EXIT_SUCCESS : EXIT_FAILURE;
 }

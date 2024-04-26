@@ -2,15 +2,25 @@
 #define _QUIZ_DAEMON_H_
 
 #include <stdbool.h>
+#include <unistd.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void daemonize();
+/**
+ * @brief Fork a daemon process.
+ *
+ * @param log_file the file to redirect the stdard input, output and error to
+ * @return pid_t the pid of the daemon
+ * 0 means the daemon itself
+ * -1 means error to create daemon
+ * -2 means error in daemon
+ */
+pid_t daemonize(const char *log_file);
 
 /**
- * @brief Check if an daemon is already running by a pid file, must called after `daemonize`.
+ * @brief Check if an daemon is already running by a pid file, must called in the daemon process.
  *
  * @param pid_file the name of the pid file
  * @return true is running

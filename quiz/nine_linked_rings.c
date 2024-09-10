@@ -1,5 +1,5 @@
 /**
- * See https://lasy.readthedocs.io/quiz/math/nine_interlocking_rings.html
+ * See https://lasy.readthedocs.io/quiz/math/nine_linked_rings.html
  */
 
 #include <stdio.h>

@@ -102,7 +102,10 @@ bool is_running(const char *pid_file)
     int n = sprintf(buf, "%ld", (long)getpid());
     if (n > 0) {
         buf[n] = '\n';
-        write(fd, buf, n + 1);
+        int n1 = write(fd, buf, n + 1);
+        if (n1 != n) {
+            log_err("write pid file failed", strerror(errno));
+        }
     }
     // Do not close the file, or the lock is released.
     return false;

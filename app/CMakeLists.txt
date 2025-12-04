@@ -1,3 +1,3 @@
 add_exe(txt2html txt2html.cpp)
-copy_file(copy_cfg_file txt2html.txt)
-add_dependencies(txt2html copy_cfg_file)
+copy_file(txt2html.txt)
+target_sources(txt2html PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/txt2html.txt)
